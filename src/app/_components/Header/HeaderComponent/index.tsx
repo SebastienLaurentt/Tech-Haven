@@ -6,6 +6,7 @@ import { Gutter } from '../../Gutter'
 
 import classes from './index.module.scss'
 import { HeaderNav } from '../Nav'
+import MobileNav from '../MobileNav'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   return (
@@ -16,7 +17,7 @@ const HeaderComponent = ({ header }: { header: Header }) => {
         </Link>
 
         <HeaderNav header={header} />
-        <HeaderMobileNav header={header} />
+        <MobileNav header={header} />
       </Gutter>
     </nav>
   )
