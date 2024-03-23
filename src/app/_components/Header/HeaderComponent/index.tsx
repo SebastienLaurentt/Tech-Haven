@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 import { Header } from '../../../../payload/payload-types'
 import { Gutter } from '../../Gutter'
+import MobileNav from '../MobileNav'
+import { HeaderNav } from '../Nav'
 
 import classes from './index.module.scss'
-import { HeaderNav } from '../Nav'
-import MobileNav from '../MobileNav'
 
 const HeaderComponent = ({ header }: { header: Header }) => {
   return (
