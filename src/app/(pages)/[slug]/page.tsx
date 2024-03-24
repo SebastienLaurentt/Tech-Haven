@@ -21,6 +21,7 @@ import { Metadata } from 'next'
 
 import { fetchDocs } from '../../_api/fetchDocs'
 import Categories from '../../_components/Categories'
+import Promotion from '../../_components/Promotion'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 import classes from './index.module.scss'
@@ -62,11 +63,12 @@ export default async function Page({ params: { slug = 'home' } }) {
   return (
     <React.Fragment>
       {slug === 'home' ? (
-        <section >
+        <section>
           <Hero {...hero} />
 
           <Gutter className={classes.home}>
             <Categories categories={categories} />
+            <Promotion />
           </Gutter>
         </section>
       ) : (
