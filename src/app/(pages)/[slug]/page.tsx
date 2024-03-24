@@ -20,10 +20,10 @@ export const dynamic = 'force-dynamic'
 import { Metadata } from 'next'
 
 import { fetchDocs } from '../../_api/fetchDocs'
+import Categories from '../../_components/Categories'
 import { generateMeta } from '../../_utilities/generateMeta'
 
 import classes from './index.module.scss'
-import Categories from '../../_components/Categories'
 
 export default async function Page({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
