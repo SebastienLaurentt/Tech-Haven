@@ -1,7 +1,7 @@
 'use client'
 
+import React, { Fragment, useEffect, useState } from 'react'
 import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
 
 import { Product } from '../../../payload/payload-types'
 import { Media } from '../Media'
@@ -74,6 +74,7 @@ export const Card: React.FC<{
           <Media imgClassName={classes.image} resource={metaImage} fill />
         )}
       </div>
+
       <div className={classes.content}>
         {titleToUse && <h4 className={classes.title}>{titleToUse}</h4>}
         {description && (
