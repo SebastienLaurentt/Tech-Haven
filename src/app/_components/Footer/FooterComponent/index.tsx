@@ -31,6 +31,7 @@ const FooterComponent = () => {
           ))}
         </ul>
       </Gutter>
+
     </footer>
   )
 }
