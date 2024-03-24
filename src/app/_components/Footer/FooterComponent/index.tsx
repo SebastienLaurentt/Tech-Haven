@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import { Footer } from '../../../../payload/payload-types'
+import { Footer, Media } from '../../../../payload/payload-types'
 import { inclusions, noHeaderFooterUrls } from '../../../constants'
 import { Button } from '../../Button'
 import { Gutter } from '../../Gutter'
