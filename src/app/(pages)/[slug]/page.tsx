@@ -2,7 +2,7 @@ import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-import { Page } from '../../../payload/payload-types'
+import { Category, Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'
 import { fetchDoc } from '../../_api/fetchDoc'
 import { Blocks } from '../../_components/Blocks'
@@ -17,12 +17,18 @@ import { Hero } from '../../_components/Hero'
 // If you are not using Payload Cloud then this line can be removed, see `../../../README.md#cache`
 export const dynamic = 'force-dynamic'
 
+import { Metadata } from 'next'
+
+import { fetchDocs } from '../../_api/fetchDocs'
+import { generateMeta } from '../../_utilities/generateMeta'
+
 import classes from './index.module.scss'
 
 export default async function Page({ params: { slug = 'home' } }) {
   const { isEnabled: isDraftMode } = draftMode()
 
   let page: Page | null = null
+  let categories: Category[] | null = null
 
   try {
     page = await fetchDoc<Page>({
@@ -30,6 +36,8 @@ export default async function Page({ params: { slug = 'home' } }) {
       slug,
       draft: isDraftMode,
     })
+
+    categories = await fetchDocs<Category>('categories')
   } catch (error) {
     // when deploying this template on Payload Cloud, this page needs to build before the APIs are live
     // so swallow the error here and simply render the page with fallback data where necessary
