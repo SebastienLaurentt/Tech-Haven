@@ -1,6 +1,6 @@
+import React from 'react'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
-import React from 'react'
 
 import { Category, Page } from '../../../payload/payload-types'
 import { staticHome } from '../../../payload/seed/home-static'

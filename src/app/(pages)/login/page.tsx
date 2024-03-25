@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { RenderParams } from '../../_components/RenderParams'
 import { getMeUser } from '../../_utilities/getMeUser'
 import { mergeOpenGraph } from '../../_utilities/mergeOpenGraph'
+import LoginForm from './LoginForm'
 
 import classes from './index.module.scss'
-import LoginForm from './LoginForm'
 
 export default async function Login() {
   await getMeUser({
@@ -38,7 +38,6 @@ export default async function Login() {
 
           <p>Please login here</p>
           <LoginForm />
-          
         </div>
       </div>
     </section>
