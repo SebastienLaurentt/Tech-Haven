@@ -26,6 +26,7 @@ type Result = {
 export type Props = {
   className?: string
   relationTo?: 'products'
+  selectedDocs?: ArchiveBlockProps['selectedDocs']
   populateBy?: 'collection' | 'selection'
   showPageRange?: boolean
   onResultChange?: (result: Result) => void // eslint-disable-line no-unused-vars
